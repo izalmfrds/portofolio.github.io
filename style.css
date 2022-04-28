@@ -1,5 +1,6 @@
 body {
   background-image: linear-gradient(135deg, #d14dff 100%, #0019fa 70%);
+  /* background-image: linear-gradient(135deg, #00c8c8 100%, #c20476 70%); */
   justify-content: center;
   align-items: center;
 }
@@ -19,34 +20,30 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+h1 {
+  color: #fff;
+  font-size: 24px;
+  font-family: "Lato", sans-serif;
+}
+a {
+  font-weight: bold;
+}
+
+h3 {
+  color: #fff;
+  font-size: 24px;
+  font-family: "Akshar", sans-serif;
+}
+h5 {
+  color: #fff;
+  font-family: "Varela Round", sans-serif;
+}
+
 section {
   padding-top: 5rem;
-}
-
-.jumbotron {
-  padding: 5rem;
-  background-color: linear-gradient(135deg, #00c8c8 100%, #c20476 70%);
-}
-#About {
   text-align: center;
 }
-
-#Services {
-  text-align: center;
-}
-
-#Project {
-  text-align: center;
-}
-
-#Portfolio {
-  text-align: center;
-}
-
-#Contact {
-  padding: 5rem;
-  text-align: center;
-}
+/* JUMBOTRON CSS */
 
 .glassIco {
   --width: 100px;
@@ -96,49 +93,87 @@ section {
 }
 
 /* project */
-.glassIcoProject {
-  --width: 100px;
-  width: 200px;
-  height: 200px;
-  color: #fff;
-  font-size: 30px;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-right-color: rgba(255, 255, 255, 0.1);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  margin: 20px;
-  overflow: hidden;
+
+.container {
+  width: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 10px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 400px;
+  margin: 0 auto;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+
+.card .face {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.glassIcoProject,
-.glassIcoProject * {
+
+.card .face.face1 {
   box-sizing: border-box;
-  transition: 200ms;
+  padding: 20px;
 }
-.glassIcoProject:before {
+
+.card .face.face2 {
+  background: #111;
+  transition: 0.5s;
+}
+
+.card:nth-child(1) .face.face2 {
+  background: linear-gradient(45deg, #3603ad9f, #f7308db0);
+  border-radius: 15px;
+}
+
+.card:nth-child(2) .face.face2 {
+  background: linear-gradient(45deg, #3603ad9f, #f7308db0);
+  border-radius: 15px;
+}
+
+.card:nth-child(3) .face.face2 {
+  background: linear-gradient(45deg, #3603ad9f, #f7308db0);
+  border-radius: 15px;
+}
+
+.card:hover .face.face2 {
+  height: 100px;
+  border-radius: 0 0 15px 15px;
+}
+
+.card .face.face2:before {
   content: "";
   position: absolute;
-  display: block;
+  top: 0;
+  left: 0;
   width: 50%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.5);
-  filter: blur(0px);
-  transition: 400ms;
-  transform: skewX(45deg) translateX(calc(var(--width) + 50%));
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px 0 0 15px;
 }
-.glassIcoProject:hover {
-  transform: translateY(-20px);
+
+.card .face.face2 h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  color: #fff;
+  transition: 0.5s;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
 }
-.glassIcoProject:hover:before {
-  transform: skewX(45deg) translateX(calc(var(--width) * -1 - 50%));
-}
-.glassIcoProject > * {
-  opacity: 0.8;
+
+.card:hover .face.face2 h2 {
+  font-size: 1.5em;
 }
